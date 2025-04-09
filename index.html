@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Back Certification Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        #certificate {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e7e7e7;
+            border: 1px solid #ccc;
+        }
+        #leaderboard {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Big Back Certification Quiz</h1>
+</header>
+
+<div class="container">
+    <h2>Take the Quiz!</h2>
+
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <label for="q1">What is the official term for the sound that happens when a Big Back devours an entire pizza?</label>
+            <input type="radio" name="q1" value="a"> a) Crunchy Delight<br>
+            <input type="radio" name="q1" value="b"> b) Sigh of Satisfaction<br>
+            <input type="radio" name="q1" value="c"> c) Crunchy Glory<br>
+            <input type="radio" name="q1" value="d"> d) The Unstoppable Bite<br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <label for="q2">Which food item is most commonly spotted in the wild near a Big Back?</label>
+            <input type="radio" name="q2" value="a"> a) A burger with extra cheese<br>
+            <input type="radio" name="q2" value="b"> b) A plate of spaghetti that's bigger than the plate<br>
+            <input type="radio" name="q2" value="c"> c) A mountain of pancakes<br>
+            <input type="radio" name="q2" value="d"> d) All of the above<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <label for="q3">If a Big Back were a superhero, what would be their superpower?</label>
+            <input type="radio" name="q3" value="a"> a) Unlimited Food Consumption<br>
+            <input type="radio" name="q3" value="b"> b) Transforming into a giant burrito<br>
+            <input type="radio" name="q3" value="c"> c) Speed Eating<br>
+            <input type="radio" name="q3" value="d"> d) Pizza Summoning<br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <label for="q4">How many calories are required to become an official Big Back?</label>
+            <input type="radio" name="q4" value="a"> a) 2,000<br>
+            <input type="radio" name="q4" value="b"> b) 5,000<br>
+            <input type="radio" name="q4" value="c"> c) 10,000<br>
+            <input type="radio" name="q4" value="d"> d) 100,000<br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <label for="q5">What is a Big Back's secret weapon in an eating contest?</label>
+            <input type="radio" name="q5" value="a"> a) A gallon of ranch dressing<br>
+            <input type="radio" name="q5" value="b"> b) A super-fast metabolism<br>
+            <input type="radio" name="q5" value="c"> c) A team of personal chefs<br>
+            <input type="radio" name="q5" value="d"> d) The power of will<br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <label for="q6">What food item is most often considered the Big Back’s arch-nemesis?</label>
+            <input type="radio" name="q6" value="a"> a) A salad<br>
+            <input type="radio" name="q6" value="b"> b) A granola bar<br>
+            <input type="radio" name="q6" value="c"> c) A fruit plate<br>
+            <input type="radio" name="q6" value="d"> d) A cup of soup<br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <label for="q7">What happens when a Big Back enters a buffet?</label>
+            <input type="radio" name="q7" value="a"> a) The entire buffet shuts down<br>
+            <input type="radio" name="q7" value="b"> b) The food instantly triples in size<br>
+            <input type="radio" name="q7" value="c"> c) The Big Back turns into a human vacuum<br>
+            <input type="radio" name="q7" value="d"> d) Nothing, they just pick what they want<br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <label for="q8">Which is the best beverage choice for a Big Back?</label>
+            <input type="radio" name="q8" value="a"> a) Soda<br>
+            <input type="radio" name="q8" value="b"> b) Water<br>
+            <input type="radio" name="q8" value="c"> c) Milkshake<br>
+            <input type="radio" name="q8" value="d"> d) Coffee<br>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <label for="q9">How much pizza can a Big Back eat in one sitting?</label>
+            <input type="radio" name="q9" value="a"> a) Two slices<br>
+            <input type="radio" name="q9" value="b"> b) A full pizza<br>
+            <input type="radio" name="q9" value="c"> c) As much as the pizza delivery person can bring<br>
+            <input type="radio" name="q9" value="d"> d) None, they are a pasta person<br>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <label for="q10">What is the first thing a Big Back does after a large meal?</label>
+            <input type="radio" name="q10" value="a"> a) Take a nap<br>
+            <input type="radio" name="q10" value="b"> b) Go for a walk<br>
+            <input type="radio" name="q10" value="c"> c) Do some push-ups<br>
+            <input type="radio" name="q10" value="d"> d) Scream, "That was delicious!"<br>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <label for="q11">Which dessert is a Big Back most likely to finish off?</label>
+            <input type="radio" name="q11" value="a"> a) A single brownie<br>
+            <input type="radio" name="q11" value="b"> b) A whole cheesecake<br>
+            <input type="radio" name="q11" value="c"> c) A cupcake and a half<br>
+            <input type="radio" name="q11" value="d"> d) A three-layer cake<br>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <label for="q12">What is the best side dish for a Big Back?</label>
+            <input type="radio" name="q12" value="a"> a) Fries<br>
+            <input type="radio" name="q12" value="b"> b) Mashed potatoes<br>
+            <input type="radio" name="q12" value="c"> c) Rice<br>
+            <input type="radio" name="q12" value="d"> d) All of the above<br>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <label for="q13">What is a Big Back’s favorite way to start a meal?</label>
+            <input type="radio" name="q13" value="a"> a) With appetizers<br>
+            <input type="radio" name="q13" value="b"> b) With dessert<br>
+            <input type="radio" name="q13" value="c"> c) With a salad<br>
+            <input type="radio" name="q13" value="d"> d) Straight to the main course<br>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <label for="q14">When a Big Back eats at a restaurant, what do they leave behind?</label>
+            <input type="radio" name="q14" value="a"> a) A huge tip<br>
+            <input type="radio" name="q14" value="b"> b) The empty plates<br>
+            <input type="radio" name="q14" value="c"> c) A satisfied stomach<br>
+            <input type="radio" name="q14" value="d"> d) A small thank you note<br>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <label for="q15">What is a Big Back’s secret to having room for more food?</label>
+            <input type="radio" name="q15" value="a"> a) Strategic stretching<br>
+            <input type="radio" name="q15" value="b"> b) A second stomach<br>
+            <input type="radio" name="q15" value="c"> c) Eating slow and steady<br>
+            <input type="radio" name="q15" value="d"> d) Pre-gaming with snacks<br>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <label for="q16">What should a Big Back never forget to do after a meal?</label>
+            <input type="radio" name="q16" value="a"> a) Go for a jog<br>
+            <input type="radio" name="q16" value="b"> b) Pat their belly<br>
+            <input type="radio" name="q16" value="c"> c) Drink a gallon of water<br>
+            <input type="radio" name="q16" value="d"> d) Relax and take a nap<br>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <label for="q17">Which breakfast item can a Big Back consume without hesitation?</label>
+            <input type="radio" name="q17" value="a"> a) A single bowl of cereal<br>
+            <input type="radio" name="q17" value="b"> b) A stack of pancakes<br>
+            <input type="radio" name="q17" value="c"> c) A smoothie<br>
+            <input type="radio" name="q17" value="d"> d) A bagel<br>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <label for="q18">What is the preferred late-night snack for a Big Back?</label>
+            <input type="radio" name="q18" value="a"> a) Ice cream<br>
+            <input type="radio" name="q18" value="b"> b) A pizza slice<br>
+            <input type="radio" name="q18" value="c"> c) Nachos<br>
+            <input type="radio" name="q18" value="d"> d) Chips and salsa<br>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <label for="q19">What is a Big Back’s usual excuse for eating so much?</label>
+            <input type="radio" name="q19" value="a"> a) "I was hungry!"<br>
+            <input type="radio" name="q19" value="b"> b) "I needed the fuel!"<br>
+            <input type="radio" name="q19" value="c"> c) "I didn’t want to waste food!"<br>
+            <input type="radio" name="q19" value="d"> d) "It’s a special occasion!"<br>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <label for="q20">How does a Big Back feel after finishing a large meal?</label>
+            <input type="radio" name="q20" value="a"> a) Tired but satisfied<br>
+            <input type="radio" name="q20" value="b"> b) Energized<br>
+            <input type="radio" name="q20" value="c"> c) Like a champion<br>
+            <input type="radio" name="q20" value="d"> d) Ready for dessert<br>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="question">
+            <label for="q21">What happens to the Big Back when they see a buffet?</label>
+            <input type="radio" name="q21" value="a"> a) The plate magically refills<br>
+            <input type="radio" name="q21" value="b"> b) The food calls their name<br>
+            <input type="radio" name="q21" value="c"> c) They bring an extra-large bag<br>
+            <input type="radio" name="q21" value="d"> d) They walk away<br>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question">
+            <label for="q22">What’s the most appropriate reaction if a Big Back is asked if they’re still hungry?</label>
+            <input type="radio" name="q22" value="a"> a) "I’m always hungry!"<br>
+            <input type="radio" name="q22" value="b"> b) "No, just resting my stomach."<br>
+            <input type="radio" name="q22" value="c"> c) "What’s for dessert?"<br>
+            <input type="radio" name="q22" value="d"> d) "I could eat more."<br>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="question">
+            <label for="q23">What does a Big Back consider the perfect meal?</label>
+            <input type="radio" name="q23" value="a"> a) A buffet of all their favorite foods<br>
+            <input type="radio" name="q23" value="b"> b) A single massive burger<br>
+            <input type="radio" name="q23" value="c"> c) Multiple courses<br>
+            <input type="radio" name="q23" value="d"> d) Anything with fries<br>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="question">
+            <label for="q24">What is the favorite snack of a Big Back during movie night?</label>
+            <input type="radio" name="q24" value="a"> a) Popcorn<br>
+            <input type="radio" name="q24" value="b"> b) Pizza<br>
+            <input type="radio" name="q24" value="c"> c) Nachos<br>
+            <input type="radio" name="q24" value="d"> d) Ice cream<br>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="question">
+            <label for="q25">How does a Big Back react to being asked to "slow down" during a meal?</label>
+            <input type="radio" name="q25" value="a"> a) They keep eating<br>
+            <input type="radio" name="q25" value="b"> b) They pause and smile<br>
+            <input type="radio" name="q25" value="c"> c) They speed up<br>
+            <input type="radio" name="q25" value="d"> d) They take a short nap<br>
+        </div>
+
+        <!-- Question 26 -->
+        <div class="question">
+            <label for="q26">What does a Big Back order when they’re not in the mood to cook?</label>
+            <input type="radio" name="q26" value="a"> a) Pizza<br>
+            <input type="radio" name="q26" value="b"> b) Chinese food<br>
+            <input type="radio" name="q26" value="c"> c) A burger<br>
+            <input type="radio" name="q26" value="d"> d) Taco Bell<br>
+        </div>
+
+        <!-- Question 27 -->
+        <div class="question">
+            <label for="q27">What is the main goal of a Big Back during a buffet visit?</label>
+            <input type="radio" name="q27" value="a"> a) To try everything<br>
+            <input type="radio" name="q27" value="b"> b) To go back for seconds<br>
+            <input type="radio" name="q27" value="c"> c) To eat until they can’t move<br>
+            <input type="radio" name="q27" value="d"> d) To make the most of the "all-you-can-eat" rule<br>
+        </div>
+
+        <!-- Question 28 -->
+        <div class="question">
+            <label for="q28">What does a Big Back consider "too much food?"</label>
+            <input type="radio" name="q28" value="a"> a) There’s no such thing!<br>
+            <input type="radio" name="q28" value="b"> b) Anything after the first plate<br>
+            <input type="radio" name="q28" value="c"> c) A massive dessert<br>
+            <input type="radio" name="q28" value="d"> d) None of the above<br>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="question">
+            <label for="q29">When is the best time for a Big Back to eat?</label>
+            <input type="radio" name="q29" value="a"> a) Breakfast<br>
+            <input type="radio" name="q29" value="b"> b) Lunch<br>
+            <input type="radio" name="q29" value="c"> c) Dinner<br>
+            <input type="radio" name="q29" value="d"> d) Anytime<br>
+        </div>
+
+        <!-- Question 30 -->
+        <div class="question">
+            <label for="q30">What’s the first thing a Big Back does after finishing a large meal?</label>
+            <input type="radio" name="q30" value="a"> a) They look for more food<br>
+            <input type="radio" name="q30" value="b"> b) They take a nap<br>
+            <input type="radio" name="q30" value="c"> c) They complain about being too full<br>
+            <input type="radio" name="q30" value="d"> d) They go for a walk<br>
+        </div>
+
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
