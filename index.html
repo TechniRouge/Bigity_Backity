@@ -157,14 +157,14 @@
             <input type="radio" name="q10" value="c"> c) Do some push-ups<br>
             <input type="radio" name="q10" value="d"> d) Scream, "That was delicious!"<br>
         </div>
-
-        <!-- Question 11 -->
+	
+	 <!-- Question 11 -->
         <div class="question">
             <label for="q11">Which dessert is a Big Back most likely to finish off?</label>
             <input type="radio" name="q11" value="a"> a) A single brownie<br>
             <input type="radio" name="q11" value="b"> b) A whole cheesecake<br>
-            <input type="radio" name="q11" value="c"> c) A cupcake and a half<br>
-            <input type="radio" name="q11" value="d"> d) A three-layer cake<br>
+            <input type="radio" name="q11" value="c"> c) A three-layer cake<br>
+            <input type="radio" name="q11" value="d"> d) All of the above<br>
         </div>
 
         <!-- Question 12 -->
@@ -199,17 +199,17 @@
             <label for="q15">What is a Big Back’s secret to having room for more food?</label>
             <input type="radio" name="q15" value="a"> a) Strategic stretching<br>
             <input type="radio" name="q15" value="b"> b) A second stomach<br>
-            <input type="radio" name="q15" value="c"> c) Eating slow and steady<br>
+            <input type="radio" name="q15" value="c"> c) A and B<br>
             <input type="radio" name="q15" value="d"> d) Pre-gaming with snacks<br>
         </div>
 
         <!-- Question 16 -->
         <div class="question">
             <label for="q16">What should a Big Back never forget to do after a meal?</label>
-            <input type="radio" name="q16" value="a"> a) Go for a jog<br>
+            <input type="radio" name="q16" value="a"> a) Relax and take a nap<br>
             <input type="radio" name="q16" value="b"> b) Pat their belly<br>
             <input type="radio" name="q16" value="c"> c) Drink a gallon of water<br>
-            <input type="radio" name="q16" value="d"> d) Relax and take a nap<br>
+            <input type="radio" name="q16" value="d"> d) Go for a jog<br>
         </div>
 
         <!-- Question 17 -->
@@ -226,7 +226,7 @@
             <label for="q18">What is the preferred late-night snack for a Big Back?</label>
             <input type="radio" name="q18" value="a"> a) Ice cream<br>
             <input type="radio" name="q18" value="b"> b) A pizza slice<br>
-            <input type="radio" name="q18" value="c"> c) Nachos<br>
+            <input type="radio" name="q18" value="c"> c) Anything they can find<br>
             <input type="radio" name="q18" value="d"> d) Chips and salsa<br>
         </div>
 
@@ -251,7 +251,7 @@
         <!-- Question 21 -->
         <div class="question">
             <label for="q21">What happens to the Big Back when they see a buffet?</label>
-            <input type="radio" name="q21" value="a"> a) The plate magically refills<br>
+            <input type="radio" name="q21" value="a"> a) They eat it all<br>
             <input type="radio" name="q21" value="b"> b) The food calls their name<br>
             <input type="radio" name="q21" value="c"> c) They bring an extra-large bag<br>
             <input type="radio" name="q21" value="d"> d) They walk away<br>
@@ -337,11 +337,90 @@
             <input type="radio" name="q30" value="c"> c) They complain about being too full<br>
             <input type="radio" name="q30" value="d"> d) They go for a walk<br>
         </div>
+        <!-- Repeat this pattern for all the remaining questions (11-30) -->
 
-        <br>
         <button type="submit">Submit</button>
     </form>
+
+    <div id="certificate" class="hidden">
+        <h3>Big Back Certification</h3>
+        <p>Congratulations! You are officially certified as a Big Back. Enjoy your food adventures!</p>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </div>
+
+    <div id="leaderboard">
+        <h3>Leaderboard</h3>
+        <ul id="scoreList">
+            <!-- Scores will be displayed here -->
+        </ul>
+    </div>
 </div>
+
+<script>
+    // Sample correct answers
+    const answers = {
+        q1: "c", q2: "d", q3: "a", q4: "c", q5: "d", q6: "a", q7: "c", q8: "c", q9: "c", q10: "a", q11: "d", q12: "d", q13: "d", q14: "b", q15: "c", q16: "a", q17: "b", q18: "c", q19: "c", q20: "d", q21: "a", q22: "d", q23: "a", q24: "b", q25: "c", q26: "d", q27: "b", q28: "d", q29: "d", q30: "a",
+ Add answers for questions 11-30
+    };
+
+    // Function to display leaderboard
+    function updateLeaderboard() {
+        const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+        const scoreList = document.getElementById('scoreList');
+        scoreList.innerHTML = '';  // Clear previous leaderboard
+        
+        leaderboard.sort((a, b) => b.score - a.score);  // Sort by score (highest first)
+
+        leaderboard.forEach(entry => {
+            const li = document.createElement('li');
+            li.textContent = `${entry.name}: ${entry.score} points`;
+            scoreList.appendChild(li);
+        });
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let score = 0;
+        const formElements = document.getElementById("quizForm").elements;
+        for (let i = 0; i < formElements.length; i++) {
+            const element = formElements[i];
+            if (element.type === "radio" && element.checked) {
+                if (answers[element.name] === element.value) {
+                    score++;
+                }
+            }
+        }
+
+        // Get the user's name for leaderboard
+        const userName = prompt("Enter your name for the leaderboard:");
+
+        // Save score to localStorage leaderboard
+        const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+        leaderboard.push({ name: userName, score: score });
+        localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+
+        updateLeaderboard();
+
+        // Show certificate if passing
+        if (score >= 21) {
+            document.getElementById("certificate").classList.remove("hidden");
+        } else {
+            alert("Sorry, you did not pass the Big Back Certification. Try again!");
+        }
+    });
+
+    // Function to download certificate
+    function downloadCertificate() {
+        const link = document.createElement('a');
+        link.href = 'data:text/plain;charset=utf-8,Big Back Certification%0A%0AYou%20have%20officially%20earned%20your%20Big%20Back%20Certification%21%20Enjoy%20your%20future%20food%20ventures.';
+        link.download = 'Big_Back_Certificate.txt';
+        link.click();
+    }
+
+    // Initialize leaderboard when page loads
+    window.onload = updateLeaderboard;
+</script>
 
 </body>
 </html>
